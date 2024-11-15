@@ -71,14 +71,12 @@ public class HomeController {
                 model.addAttribute("title", "Invalid Event ID: " + employerId);
                 model.addAttribute("employers", employerRepository.findAll());
                 model.addAttribute("skills", skillRepository.findAllById(skills));
-//            } else {
-//                Employer employer = result.get();
-//                model.addAttribute("employer", employer.getName());
-//                return "employers/view";
+
             } else {
 
                 Employer employer = job.get();
                 newJob.setEmployer(employer);
+                newJob.setSkills(skillObjs);
                 jobRepository.save(newJob);
             }
             }

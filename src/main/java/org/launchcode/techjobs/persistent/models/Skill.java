@@ -10,12 +10,10 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
-//    @ManyToOne
     @Size(max = 255, message = "Description too long!")
     public String description;
 
     @ManyToMany(mappedBy="skills")
-//    @JoinColumn(name = "employer_id")
     private List<Job> jobs = new ArrayList<>();
 
     public Skill() {}

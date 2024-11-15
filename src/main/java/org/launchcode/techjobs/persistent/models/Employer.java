@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 public class Employer extends AbstractEntity {
 
-//    @ManyToOne
     @NotNull(message = "Location is required")
     @Size(min = 3, max = 50, message = "Location must be between 3 and 50 characters")
     public String location;
@@ -39,6 +38,6 @@ public class Employer extends AbstractEntity {
     }
 
     public void setJobs(List<Job> jobs) {
-        jobs = jobs;
+        this.jobs = jobs;
     }
 }
